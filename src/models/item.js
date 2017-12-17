@@ -7,7 +7,10 @@ var itemSchema = new Schema({
   img_url: String,
   categoryId: Number,
   msrp: Number,
-  bid_time: Date,
+  bid_time: {
+    type: Date,
+    index: { unique: true }
+  },
   highest_bid: Number,
   highest_bidder_key: String
 });
