@@ -52,7 +52,7 @@ io.on('connection', function(socket) {
 var nextTick = function() {
   return 60000 - (new Date().getTime() % 60000);
 }, timerFunction = function() {
-  _getAuctionItem(socket);
+  _getAuctionItem();
   // console.log(new Date());
   setTimeout(timerFunction, nextTick());
 };
