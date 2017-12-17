@@ -4,7 +4,7 @@ import Item from '../models/item';
 import {bidTime} from '../util/datetime';
 
 export const index = (req, res, next) => {
-  Item.find().lean().exec((err, items) => res.json(
+  Item.where('bid_time').gte(bidTime).lean().exec((err, items) => res.json(
     { items }
   ));
 };
