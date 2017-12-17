@@ -21,7 +21,7 @@ import {bidTime} from './util/datetime';
 
 // Go through each item
 export const seedData = function() {
-  mongoose.connect('mongodb://localhost/items', {
+  mongoose.connect("mongodb://heroku_hqph6t94:nhsftn7hbeutr1mrdfikn2779f@ds159856.mlab.com:59856/heroku_hqph6t94", {
     useMongoClient: true
   });
 

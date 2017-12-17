@@ -61,8 +61,10 @@ io.on('connection', function(socket) {
 
 //MongoDB
 
+const mongodbURI = "mongodb://heroku_hqph6t94:nhsftn7hbeutr1mrdfikn2779f@ds159856.mlab.com:59856/heroku_hqph6t94";
+
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/items', {
+mongoose.connect(mongodbURI, {
   useMongoClient: true
 });
 
@@ -70,7 +72,7 @@ mongoose.connect('mongodb://localhost/items', {
 seedData();
 
 const dataInterval = 1.14 * Math.pow(10, 6);
-setInterval(seedData, dataInterval);
+// setInterval(seedData, dataInterval);
 
 
 // Logger that outputs all requests into the console
