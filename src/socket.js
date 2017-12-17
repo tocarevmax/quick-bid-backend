@@ -28,7 +28,7 @@ export const increaseBid = (userKey, bidAmount, auctionItemId, socket) => {
   // console.log("checking bid");
   Item.findOne({bid_time: bidTime()}).exec((err, foundItem) => {
     // console.log(foundItem);
-    if (foundItem.id === auctionItemId) {
+    if ((foundItem.id === auctionItemId) && (foundItem.highest_bid < bidAmount)) {
       Item.findOneAndUpdate({bid_time: bidTime()}, {
         "$set": {
           "highest_bid": bidAmount,
