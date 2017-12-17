@@ -1,9 +1,7 @@
 {
   "name": "express-babel",
   "version": "1.0.0",
-  "description": "Using latest JavaScript features on the server",
-  "repository": "https://github.com/vmasto/express-babel",
-  "author": "Vassilis Mastorostergios <vmasto@gmail.com>",
+  "description": "QuickBid Backend",
   "license": "MIT",
   "main": "dist/index.js",
   "engines": {
