@@ -2,6 +2,7 @@ import {bidTime} from './util/datetime';
 import { auctionItem } from './controllers/items';
 import Item from './models/item';
 // import { increaseBid } from './controllers/auctions';
+import {io} from './server';
 
 export const _getAuctionItem = (socket) => {
   Item.findOne({bid_time: bidTime()}).exec((err, item) => {
@@ -37,7 +38,8 @@ export const increaseBid = (userKey, bidAmount, auctionItemId, socket) => {
       }, {new: true}
     ).exec((err2, updatedItem) => {
       // console.log("executed bid");
-        socket.emit('auction item', updatedItem);
+        // socket.emit('auction item', updatedItem);
+        io.emit('auction item', updatedItem);
         // console.log(updatedItem);
         if (err2) {
           console.log(err2);
