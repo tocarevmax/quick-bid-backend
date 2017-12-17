@@ -61,7 +61,9 @@ io.on('connection', function(socket) {
 
 //MongoDB
 
-const mongodbURI = "mongodb://heroku_hqph6t94:nhsftn7hbeutr1mrdfikn2779f@ds159856.mlab.com:59856/heroku_hqph6t94";
+// const mongodbURI = "mongodb://heroku_hqph6t94:nhsftn7hbeutr1mrdfikn2779f@ds159856.mlab.com:59856/heroku_hqph6t94";
+
+const mongodbURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongodbURI, {
