@@ -7,7 +7,7 @@ import {io} from './server';
 export const _getAuctionItem = (socket) => {
   Item.findOne({bid_time: bidTime()}).exec((err, item) => {
     if (item) {
-      socket.emit('auction item', item);
+      io.emit('auction item', item);
       console.log(item);
     }
     return item;

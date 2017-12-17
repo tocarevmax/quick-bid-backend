@@ -46,17 +46,18 @@ io.on('connection', function(socket) {
   });
   socket.on('disconnect', () => console.log('Disconnected'));
   socket.emit('connected');
-  var nextTick = function() {
-    return 60000 - (new Date().getTime() % 60000);
-  }, timerFunction = function() {
-    _getAuctionItem(socket);
-    // console.log(new Date());
-    setTimeout(timerFunction, nextTick());
-  };
 
-  var timeout = setTimeout(timerFunction, nextTick());
 });
 
+var nextTick = function() {
+  return 60000 - (new Date().getTime() % 60000);
+}, timerFunction = function() {
+  _getAuctionItem(socket);
+  // console.log(new Date());
+  setTimeout(timerFunction, nextTick());
+};
+
+var timeout = setTimeout(timerFunction, nextTick());
 
 
 //MongoDB
