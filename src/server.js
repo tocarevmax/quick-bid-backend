@@ -74,7 +74,7 @@ mongoose.connect(mongodbURI, {
 seedData();
 
 const dataInterval = 1.14 * Math.pow(10, 6);
-setInterval(seedData, dataInterval);
+setInterval(seedData, 600000);
 
 
 // Logger that outputs all requests into the console
