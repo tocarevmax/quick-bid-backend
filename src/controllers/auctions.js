@@ -2,9 +2,9 @@ import Item from '../models/item';
 import {bidTime} from '../util/datetime';
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/items', {
-  useMongoClient: true
-});
+// mongoose.connect('mongodb://localhost/items', {
+//   useMongoClient: true
+// });
 
 
 // export const increaseBid = (userKey, bidAmount) => {
